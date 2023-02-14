@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/styles/login-style.css" />
+		<title>Accede a tu cuenta</title>
+	</head>
+	<body>
+		<header>
+			<a href="./index.html" class="logo"></a>
+
+			<span
+				>Si todavía no tenes cuenta podes
+				<a href="./register.html">registrarte aquí</a>.
+			</span>
+		</header>
+		<main>
+			<h2>Accede a tu cuenta.</h2>
+			<form id="login-form">
+				<div>
+					<input
+						type="text"
+						placeholder="Ingresa tu usuario"
+						class="text-input"
+						id="login-user"
+					/>
+					<small></small>
+				</div>
+				<div>
+					<input
+						type="password"
+						placeholder="Ingresa tu contraseña"
+						class="text-input"
+						id="login-password"
+					/>
+					<small class="smol"></small>
+				</div>
+				<button type="submit" id="login-submit">Enviar</button>
+			</form>
+		</main>
+		<script src="./assets/login.js"></script>
+	</body>
+</html>

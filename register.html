@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/styles/register-style.css" />
+		<title>Registrate</title>
+	</head>
+	<body>
+		<header>
+			<a href="./index.html" class="logo"></a>
+
+			<span>Si ya tenes cuenta <a href="./login.html">ingresa aquí</a>. </span>
+		</header>
+		<main>
+			<h2>Registra tu cuenta.</h2>
+			<form id="register-form">
+				<div>
+					<input
+						type="text"
+						placeholder="Ingresa tu nombre de usuario"
+						id="register-user"
+						class="text-input"
+					/>
+					<small></small>
+				</div>
+				<div>
+					<input
+						type="email"
+						placeholder="Ingresa tu correo electrónico"
+						id="register-email"
+						class="text-input"
+					/>
+					<small></small>
+				</div>
+				<div>
+					<input
+						type="password"
+						placeholder="Ingresa tu contraseña"
+						id="register-pass"
+						class="text-input"
+					/>
+					<small></small>
+				</div>
+				<button type="submit" id="register-submit">Enviar</button>
+			</form>
+		</main>
+		<script src="./assets/register.js"></script>
+	</body>
+</html>

@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --background: #FFFCF2;
+    --primary: #252422;
+    --secondary: #CCC5B9;
+    --decoration: #EB5E28;
+    --text: #403D39;
+}
+
+
+
+header{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    padding: 0 40px;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary);
+    color: var(--secondary);
+    position: fixed;
+}
+
+header a{
+    color: white;
+    text-decoration: underline;
+    transition: 0.5s ease-out;
+}
+
+header a:hover{
+    color: var(--decoration);
+    transition: 0.5s ease-in;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    background: url(/Entregas/Final-JS/assets/images/consola-de-video.png) no-repeat center/cover;
+}
+
+main{
+    height: 100vh;
+    width: 100%;
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 70%;
+    max-width: 350px;
+}
+
+h2{
+    font-size: 30px;
+    text-align: center;
+}
+
+.text-input {
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px var(--primary) solid;
+    padding: 0 10px;
+    outline: 0;
+}
+
+button[type=submit] {
+    height: 40px;
+    border-radius: 10px;
+    background: var(--decoration);
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    
+}
+
+.error{
+    border: 2px solid red;
+}
+
+small{
+    color: red;
+}
