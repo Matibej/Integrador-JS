@@ -1,0 +1,208 @@
+@import url(/Entregas/Final-JS/assets/styles/style.css);
+
+
+
+body{
+    background: var(--background);
+    flex-wrap: nowrap;    
+    
+}
+
+header{
+    z-index: 2;
+}
+
+nav{
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+}
+
+header a{
+    color: var(--secondary);
+    font-size: 18px;
+}
+
+header a:hover{
+    color: var(--decoration)
+}
+
+.main-cart{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 120px 30px 0 30px;
+    
+}
+
+.cart-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.cart-item{
+    background: white;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+    gap: 25px;
+    position: relative;
+    padding: 10px;
+    
+}
+
+.item-info{
+    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cart-item h3{
+    width: 90%;
+}
+
+.delete{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    background: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: lightgray;
+    
+}
+
+.cart-item img{
+    height: 100px;
+    width: 120px;
+}
+
+.cart-item{
+    display: flex;
+    
+}
+
+.info-container{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.more-info, .quantity-info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+
+}
+
+
+
+
+.cart-calculator{
+    min-height: 70vh;
+    width: 30%;
+    background: white;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+    
+}
+
+.quantity-handler{
+    display: flex;
+    align-self: center;
+    gap: 10px;
+}
+
+.number{
+    text-align: center;
+    width: 30px;
+    height: 25px;
+    border: 1px solid var(--secondary);
+    border-radius: 5px;
+    color: var(--decoration);
+    font-size: 15px;
+}
+
+.add-num, .reduce-num{
+    background: var(--decoration);
+    width: 30px;
+    height: 25px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+.add-num{
+    border-radius: 40% 0px 0px 40%;
+}
+
+.reduce-num{
+    border-radius: 0px 40% 40% 0px;
+}
+
+.hide{
+    display: none;
+}
+
+
+.cart-calculator{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.calculator-products{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+   
+}
+
+ul{
+    width: 100%;
+}
+
+ul li{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.total{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cart-calculator span{
+    color: rgb(34, 34, 175);
+}
+
+hr{
+    width: 100%;
+}
+
+.total button{
+    border: none;
+    background: var(--decoration);
+    color: white;
+    height: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+

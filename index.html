@@ -22,7 +22,6 @@
 				<ul class="nav-list">
 					<li><a href="./index.html">Inicio</a></li>
 					<li><a href="#products">Productos</a></li>
-					<li><a href="#">Contacto</a></li>
 					<li><a href="./about.html">Acerca de</a></li>
 					<li><a href="./register.html">Registro</a></li>
 					<li>
@@ -31,7 +30,10 @@
 						>
 					</li>
 				</ul>
-				<div class="cart"><i class="fa-solid fa-cart-shopping"></i></div>
+				<div class="menu-label"><i class="fa-solid fa-bars"></i></div>
+				<a href="./cart.html" class="cart"
+					><i class="fa-solid fa-cart-shopping"></i
+				></a>
 			</nav>
 		</header>
 		<main>
@@ -43,122 +45,50 @@
 			<section id="products">
 				<div class="search-products">
 					<h2>Encontrá lo que buscas aquí:</h2>
+
 					<div class="search-bar">
-						<input type="text" placeholder="Buscar productos" />
-						<button><i class="fa-solid fa-magnifying-glass"></i></button>
+						<div class="bar">
+							<input
+								type="text"
+								placeholder="Buscar productos"
+								id="search-bar"
+							/>
+							<small class="error"></small>
+						</div>
+						<button class="search">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</button>
 					</div>
 				</div>
 				<!-- category filter -->
 				<div class="products-and-filter">
-					<aside class="filter-categories"></aside>
-					<div class="products-container">
-						<!-- product-card -->
-						<div class="product-items">
-							<div class="product-card"></div>
-							<div class="product-info">
-								<p class="product-name">
-									Teclado Redragon Harpe PRO K503 RGP ESP
-								</p>
-								<div class="product-price">
-									<span class="price">$15600</span>
-									<button
-										class="add"
-										data-id="#"
-										data-name="#"
-										data-price="#"
-										data-img="#"
-									>
-										Comprar
-									</button>
-								</div>
-							</div>
-						</div>
-
-						<div class="product-items">
-							<div class="product-card"></div>
-							<div class="product-info">
-								<p class="product-name">
-									Teclado Redragon Harpe PRO K503 RGP ESP
-								</p>
-								<div class="product-price">
-									<span class="price">$15600</span>
-									<button
-										class="add"
-										data-id="#"
-										data-name="#"
-										data-price="#"
-										data-img="#"
-									>
-										Comprar
-									</button>
-								</div>
-							</div>
-						</div>
-
-						<div class="product-items">
-							<div class="product-card"></div>
-							<div class="product-info">
-								<p class="product-name">
-									Teclado Redragon Harpe PRO K503 RGP ESP
-								</p>
-								<div class="product-price">
-									<span class="price">$15600</span>
-									<button
-										class="add"
-										data-id="#"
-										data-name="#"
-										data-price="#"
-										data-img="#"
-									>
-										Comprar
-									</button>
-								</div>
-							</div>
-						</div>
-
-						<div class="product-items">
-							<div class="product-card"></div>
-							<div class="product-info">
-								<p class="product-name">
-									Teclado Redragon Harpe PRO K503 RGP ESP
-								</p>
-								<div class="product-price">
-									<span class="price">$15600</span>
-									<button
-										class="add"
-										data-id="#"
-										data-name="#"
-										data-price="#"
-										data-img="#"
-									>
-										Comprar
-									</button>
-								</div>
-							</div>
-						</div>
-
-						<div class="product-items">
-							<div class="product-card"></div>
-							<div class="product-info">
-								<p class="product-name">
-									Teclado Redragon Harpe PRO K503 RGP ESP
-								</p>
-								<div class="product-price">
-									<span class="price">$15600</span>
-									<button
-										class="add"
-										data-id="#"
-										data-name="#"
-										data-price="#"
-										data-img="#"
-									>
-										Comprar
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
+					<aside class="filter-categories">
+						<button class="category">Seleccionar todos</button>
+						<button class="category" data-category="Mouse">Mouse</button>
+						<button class="category" data-category="Monitor">Monitor</button>
+						<button class="category" data-category="Fuente de alimentación">
+							Fuente de alimentación
+						</button>
+						<button class="category" data-category="Placa de video">
+							Placa de video
+						</button>
+						<button class="category" data-category="Mother">Mother</button>
+						<button class="category" data-category="Auriculares">
+							Auriculares
+						</button>
+						<button class="category" data-category="Procesador">
+							Procesador
+						</button>
+						<button class="category" data-category="Memoria RAM">
+							Memoria RAM
+						</button>
+						<button class="category" data-category="Teclado">Teclado</button>
+						<button class="category" data-category="Gabinete">Gabinete</button>
+					</aside>
+					<!-- container de los productos -->
+					<div class="products-container"></div>
 				</div>
+				<button class="show-more">Mostrar más</button>
 			</section>
 		</main>
 		<footer>
@@ -169,7 +99,7 @@
 			</div>
 			<p>Hecho con 🎮 en Dojo Gaming</p>
 		</footer>
-		<script src="./assets/main.js"></script>
 		<script src="./assets/data.js"></script>
+		<script src="./assets/main.js"></script>
 	</body>
 </html>

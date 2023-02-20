@@ -62,6 +62,14 @@ header{
     transition: 0.5s ease;
 }
 
+.cart {
+    color: var(--secondary);
+}
+
+.menu-label{
+    display: none;
+}
+
 /* about-us*/
 
 .presentation{
@@ -141,8 +149,14 @@ h1{
     
 }
 
-.search-bar input{
+.bar{
     width: 35%;
+    min-width: 250px;
+    
+}
+
+.search-bar input{
+    width: 100%;
     min-width: 250px;
     height: 40px;
     padding: 5px;
@@ -152,11 +166,16 @@ h1{
 
 .search-bar button{
    width: 50px;
+   height: 40px;
    border-radius: 10px;
    border: none;
    background: var(--decoration); 
    color: var(--background);
    cursor: pointer;
+}
+
+.error{
+    color: red;
 }
 
 /* category-filter */
@@ -167,27 +186,58 @@ h1{
     padding: 20px 40px;
     gap: 20px;
     
+    
 }
 
 .filter-categories{
     height: 600px;
     width: 400px;
     border-radius: 5px;
-    background: white ;
+    background: white;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
     
+    
+}
+
+.category{
+    width: 100%;
+    font-size: 18px;
+    border: none;
+    background: white;
+    color: var(--text);
+    display: flex;
+    padding: 0 50px;
+    cursor: pointer;
+    
+}
+
+.filter-categories button:hover{
+    background: var(--decoration);
+    color: white;
+    
+}
+
+.category-active{
+    background: var(--decoration);
+    color: white;
 }
 
 .products-container{
     width: 70%;
-    border: 1px solid red;
     display: flex;
     flex-wrap: wrap;
-    padding: 20px 0;
+    padding: 0 0 20px 0;
     gap: 50px;
     justify-content: center;
 
 }
+
+
+
 
 /* product card */
 
@@ -212,10 +262,9 @@ h1{
     transition: 0.2s ease;
 }
 
-.product-card{
+.product-items img{
     height: 200px;
     width: 200px;
-    background: url(/Entregas/Final-JS/assets/images/products/Teclado_Redragon_Harpe_PRO_K503_RGB_ESP_96243639-grn.jpg) no-repeat center/contain;
 }
 
 .product-info{
@@ -260,6 +309,27 @@ h1{
     transition: 0.5s ease-in;
 }
 
+.show-more{
+    background: white;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px;
+    color: var(--text);
+    font-size: 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+}
+
+.show-more:hover{
+    color: var(--decoration);
+}
+
+.hide{
+    display: none;
+}
+
 /* footer */
 
 footer{
@@ -285,3 +355,5 @@ footer div>a{
     color: var(--secondary);
     font-weight: bold;
 }
+
+
