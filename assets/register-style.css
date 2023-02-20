@@ -43,7 +43,7 @@ header a:hover{
 .logo{
     height: 50px;
     width: 50px;
-    background: url(/Entregas/Final-JS/assets/images/consola-de-video.png) no-repeat center/cover;
+    background: url(./images/consola-de-video.png) no-repeat center/cover;
 }
 
 main{
