@@ -4,8 +4,25 @@ const categoriesContainer = document.querySelector(".filter-categories")
 const categories = document.querySelectorAll(".category")
 const searchBar = document.querySelector("#search-bar")
 const searchButton = document.querySelector(".search")
+const navbar = document.querySelector(".nav-list")
+const navbtn = document.querySelector(".menu-label")
 
+// Toggle menu
 
+const toggleMenu = () => { 
+    navbar.classList.toggle("open-nav")
+}
+
+const closeOnClick = (e) =>{
+    if (!e.target.classList.contains("navbar-link")) {
+        return;
+    }
+    navbar.classList.remove("open-nav");
+    // TEMGO QUE ARREGLAR ESTO
+    
+}
+
+// Render products
 
 RenderItem = (item) => {
     const {id, name, price, brandname, category, productImage} = item;
@@ -61,6 +78,7 @@ const CheckHide = () => {
 }
 
 
+// Search bar
 
 
 const SearchProduct = () => {
@@ -92,6 +110,8 @@ const RenderSearchProduct = () => {
     if (result == ""){ShowError("No se encontró nungún producto");}
 };
 
+// category list
+
 const ChangeBtn = () =>{
     const selectedBtn = e.target.dataset.category;
     const categoriesList = [...categories];
@@ -121,8 +141,6 @@ const ChangeCategory = (e) => {
 } 
 
 
-
-
 const ChangeActive = (e) => {
     if (!e.target.classList.contains("category")) {
         return
@@ -139,6 +157,8 @@ const ChangeActive = (e) => {
     }
 }
 
+// Error and Success
+
 const ShowError = (message) =>{
     const error = document.querySelector("small")
     error.textContent = message;
@@ -149,6 +169,9 @@ const ShowSuccess = () =>{
     error.textContent = "";
     
 }
+
+
+// Init
 
 const init = () => {
 
@@ -164,6 +187,11 @@ showMore.addEventListener("click", () => {
 categoriesContainer.addEventListener("click", ChangeActive)
 
 searchButton.addEventListener("click",SearchProduct)
+
+navbtn.addEventListener("click", toggleMenu)
+
+navbar.addEventListener("click", closeOnClick)
+
 };
 
 init();

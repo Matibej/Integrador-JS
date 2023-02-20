@@ -44,6 +44,10 @@
     .cart-container, .cart-calculator{
         width: 90%;
     }
+
+    .open-nav{
+        display: flex;
+    }
 }
 
 @media (max-width: 550px){
