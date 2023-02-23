@@ -86,13 +86,17 @@ header a:hover{
 
 .cart-item{
     display: flex;
+    align-items: center;
     
+
 }
 
 .info-container{
     display: flex;
-    align-items: center;
-    gap: 50px;
+    justify-content: space-between;
+    gap: 10px;
+    padding-right: 25px;
+    
 }
 
 .more-info, .quantity-info{
@@ -100,10 +104,18 @@ header a:hover{
     flex-direction: column;
     gap: 10px;
     justify-content: center;
-
+    
+    
 }
 
+.quantity-info{
+    align-items: center;
+}
 
+.price-info{
+    color: var(--decoration);
+    font-weight: bold;
+}
 
 
 .cart-calculator{
@@ -128,6 +140,8 @@ header a:hover{
     border-radius: 5px;
     color: var(--decoration);
     font-size: 15px;
+    font-weight: bold;
+    
 }
 
 .add-num, .reduce-num{
@@ -206,3 +220,48 @@ hr{
     cursor: pointer;
 }
 
+@media (max-width: 560px) {
+
+    header a{
+        font-size: 14px;
+    }
+
+    .main-cart{
+        padding: 100px 0;
+    }
+
+    .cart-item{
+        width: 100%;
+
+    }
+
+    .item-info h3{
+        font-size: 14px;
+    }
+
+    .info-container{
+        font-size: 10px;
+    }
+
+    .add-num, .reduce-num, .number{
+        width: 15px;
+        height: 15px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 440px){
+    .cart-item img{
+        width: 80px;
+        height: 80px;
+    }
+
+    .item-info h3{
+        padding: 0 10px;
+        font-size: 10px;
+    }
+
+    .info-container{
+        font-size: 8px;
+    }
+}

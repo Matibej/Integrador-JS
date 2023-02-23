@@ -72,6 +72,20 @@ header{
 
 /* about-us*/
 
+.presentation-header{
+    padding: 0 10px;
+}
+
+.presentation-nav-list{
+    display: flex;
+    gap: 10px;
+    padding: 0 20px;
+}
+
+.presentation-nav-list a{
+    color: var(--secondary);
+}
+
 .presentation{
     height: 100vh;
     display: flex;

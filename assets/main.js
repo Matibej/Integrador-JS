@@ -6,6 +6,47 @@ const searchBar = document.querySelector("#search-bar")
 const searchButton = document.querySelector(".search")
 const navbar = document.querySelector(".nav-list")
 const navbtn = document.querySelector(".menu-label")
+const addBtn = document.query
+
+
+// cart
+
+const saveLocalStorage = (cartList) => {
+	localStorage.setItem("cart", JSON.stringify(cartList));
+};
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const CartAdd = (e) =>{
+    if (!e.target.classList.contains("add")) {
+        return
+    }
+
+    const { id, name, price, brandname, category, img } = e.target.dataset;
+
+    let product = productData(id, name, price, brandname, category, img );
+    product.count = 1;
+    CheckQuantity(product);
+    saveLocalStorage(cart);
+};
+
+
+const productData = (id, name, price, brandname, category, img ) => {
+ return { id, name, price, brandname, category, img }
+};
+
+const CheckQuantity = (product) => {
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id == product.id) {
+            cart[i].count += 1;
+            return
+        }
+        
+    }
+    cart.push(product)
+}
+
+
 
 // Toggle menu
 
@@ -13,14 +54,6 @@ const toggleMenu = () => {
     navbar.classList.toggle("open-nav")
 }
 
-const closeOnClick = (e) =>{
-    if (!e.target.classList.contains("navbar-link")) {
-        return;
-    }
-    navbar.classList.remove("open-nav");
-    // TEMGO QUE ARREGLAR ESTO
-    
-}
 
 // Render products
 
@@ -36,11 +69,11 @@ RenderItem = (item) => {
 									<button class="add"
 
                                     data-id="${id}"
-                                    data.name="${name}"
-                                    data.brandname="${brandname}"
-                                    data.category="${category}"
-                                    data.price="${price}"
-                                    data.img="${productImage}"
+                                    data-name="${name}"
+                                    data-brandname="${brandname}"
+                                    data-category="${category}"
+                                    data-price="${price}"
+                                    data-img="${productImage}"
 
                                     >Comprar</button>
 								</div>
@@ -181,7 +214,6 @@ showMore.addEventListener("click", () => {
     limit += 5
     RenderProductsList(limit, productList);
     HideShowMore();
-    ShowMoreProducts();
 })
 
 categoriesContainer.addEventListener("click", ChangeActive)
@@ -190,7 +222,7 @@ searchButton.addEventListener("click",SearchProduct)
 
 navbtn.addEventListener("click", toggleMenu)
 
-navbar.addEventListener("click", closeOnClick)
+productsContainer.addEventListener("click", CartAdd)
 
 };
 
