@@ -130,7 +130,7 @@ const DeleteAllProducts = (e) => {
     localStorage.clear("cart")
     CartContainer.innerHTML = ''
     ProductsToBuy.innerHTML = ''
-    
+    Total.innerHTML = `$0`
 }
 
 const init = () => { 
