@@ -4,6 +4,13 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+			integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 		<link rel="stylesheet" href="./assets/cart.css" />
 		<link
 			rel="stylesheet"
@@ -30,17 +37,17 @@
 			<div class="cart-calculator">
 				<div class="calculator-products">
 					<h2>Mis productos</h2>
-						<ul>
-							<li>
-								Subtotal: <span>$0000</span>
-							</li>
+						<ul class="product-list">
+							
 						</ul>
 				</div>
 				
 				<div class="total">
 					<hr />
-				<p>Total: <span>$0000</span></p>
-				<button>Comprar</button>
+				<div class="total-price"><p>Total:</p><span class="total-number"></span></div>
+				<div class="buttons-container">
+				<button class="buy">Comprar</button>
+				<button class="delete-all">Borrar</div>
 				</div>
 			</div>
 		</main>
