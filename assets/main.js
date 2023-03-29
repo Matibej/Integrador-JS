@@ -1,12 +1,12 @@
-const productsContainer = document.querySelector(".products-container")
-const showMore = document.querySelector(".show-more")
-const categoriesContainer = document.querySelector(".filter-categories")
-const categories = document.querySelectorAll(".category")
-const searchBar = document.querySelector("#search-bar")
-const searchButton = document.querySelector(".search")
-const navbar = document.querySelector(".nav-list")
-const navbtn = document.querySelector(".menu-label")
-const addBtn = document.query
+const productsContainer = document.querySelector(".products-container");
+const showMore = document.querySelector(".show-more");
+const categoriesContainer = document.querySelector(".filter-categories");
+const categories = document.querySelectorAll(".category");
+const searchBar = document.querySelector("#search-bar");
+const searchButton = document.querySelector(".search");
+const navbar = document.querySelector(".nav-list");
+const navbtn = document.querySelector(".menu-label");
+const CartNum = document.querySelector(".cart-number");
 
 
 // cart
@@ -19,15 +19,17 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const CartAdd = (e) =>{
     if (!e.target.classList.contains("add")) {
-        return
+        return;
     }
 
     const { id, name, price, brandname, category, img } = e.target.dataset;
+    
 
     let product = productData(id, name, price, brandname, category, img );
     product.count = 1;
     CheckQuantity(product);
     saveLocalStorage(cart);
+    showProductNumber(cart)
 };
 
 
@@ -39,20 +41,42 @@ const CheckQuantity = (product) => {
     for (let i = 0; i < cart.length; i++) {
         if (cart[i].id == product.id) {
             cart[i].count += 1;
-            return
+            CountLimit(cart[i])
+            return;
         }
         
     }
     cart.push(product)
-}
+};
 
+const showProductNumber = (cart) => {
+    let arrCount = []
+    let number = 0
+    cart.forEach((product)=>{
+        arrCount.push(product.count)
+    })
+    const total = arrCount.reduce((acc,cur)=> acc + cur, number )
+    CartNum.innerHTML = `${total}`
 
+    if (total == 0) {
+        CartNum.innerHTML = ``
+    }
+};
+
+const CountLimit = (product) => {
+    if (product.count > 10) {
+        return product.count = 10;
+    }
+};
 
 // Toggle menu
 
 const toggleMenu = () => { 
     navbar.classList.toggle("open-nav")
-}
+};
+
+
+
 
 
 // Render products
@@ -78,37 +102,36 @@ RenderItem = (item) => {
                                     >Comprar</button>
 								</div>
 							</div>
-						</div>
-    `;
-}
+						</div>`
+};
 
-let limit = 5
-let productList = [...ProductItems]
-
+let limit = 5;
+let productList = [...ProductItems];
 
 
-RenderProductsList = (limit, productList) => {
+
+const RenderProductsList = (limit, productList) => {
     productsContainer.innerHTML = ""
     for (let i = 0; i < productList.length && i < limit; i ++) {
          product = productList[i]
-        productsContainer.innerHTML += RenderItem(product)
+        productsContainer.innerHTML += RenderItem(product);
 
     }
 };
 
 const HideShowMore = () => {
     if (limit >= ProductItems.length) {
-        showMore.classList.add("hide")
+        showMore.classList.add("hide");
     }
-}
+};
 
 const CheckHide = () => {
     if (showMore.classList.contains("hide")) {
         limit = 5
         showMore.classList.remove("hide");
-        return 
+        return; 
     }
-}
+};
 
 
 // Search bar
@@ -123,13 +146,13 @@ const SearchProduct = () => {
     } 
     else{RenderSearchProduct()
         showMore.classList.add("hide");}
-}
+};
 
 
 const RenderSearchProduct = () => {
     let search = searchBar.value.toLowerCase().trim();
-    let products = [...ProductItems]
-    let result = []
+    let products = [...ProductItems];
+    let result = [];
 
     products.forEach((product) => {
         if  (product.name.toLowerCase().includes(search)){
@@ -158,11 +181,11 @@ const ChangeBtn = () =>{
         
     } )
     
-}
+};
 
 const ChangeCategory = (e) => {
-    let RenderCategory = []
-    let products = [...ProductItems]
+    let RenderCategory = [];
+    let products = [...ProductItems];
 
     products.forEach((product) => {
         if (product.category == e.target.dataset.category) {
@@ -171,12 +194,12 @@ const ChangeCategory = (e) => {
     })
     RenderProductsList(RenderCategory.length, RenderCategory);
     
-} 
+};
 
 
 const ChangeActive = (e) => {
     if (!e.target.classList.contains("category")) {
-        return
+        return;
     } else { ChangeBtn }
 
     if (!e.target.dataset.category) {
@@ -188,42 +211,39 @@ const ChangeActive = (e) => {
         showMore.classList.add("hide");
         ShowSuccess();
     }
-}
+};
 
 // Error and Success
 
 const ShowError = (message) =>{
     const error = document.querySelector("small")
     error.textContent = message;
-}
+};
 
 const ShowSuccess = () =>{
     const error = document.querySelector("small")
     error.textContent = "";
     
-}
+};
+
+
 
 
 // Init
 
 const init = () => {
 
-RenderProductsList(limit, productList)
-
+RenderProductsList(limit, productList);
 showMore.addEventListener("click", () => {
-    limit += 5
+    limit += 5;
     RenderProductsList(limit, productList);
     HideShowMore();
-})
-
-categoriesContainer.addEventListener("click", ChangeActive)
-
-searchButton.addEventListener("click",SearchProduct)
-
-navbtn.addEventListener("click", toggleMenu)
-
-productsContainer.addEventListener("click", CartAdd)
-
+});
+categoriesContainer.addEventListener("click", ChangeActive);
+searchButton.addEventListener("click",SearchProduct);
+navbtn.addEventListener("click", toggleMenu);
+productsContainer.addEventListener("click", CartAdd);
+showProductNumber(cart);
 };
 
 init();

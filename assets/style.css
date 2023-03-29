@@ -49,7 +49,7 @@ header{
 .nav-list{
     display: flex;
     gap: 20px;
-    
+
 }
 
 .nav-list a{
@@ -64,6 +64,15 @@ header{
 
 .cart {
     color: var(--secondary);
+}
+
+.cart-number{
+    color: var(--decoration);
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    font-size: 14px;
+
 }
 
 .menu-label{
@@ -118,6 +127,9 @@ main{
     margin-top: 70px;
     color: white;
     padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 h1{
@@ -160,13 +172,13 @@ h1{
     display: flex;
     gap: 10px;
     justify-content: center;
-    
+
 }
 
 .bar{
     width: 35%;
     min-width: 250px;
-    
+
 }
 
 .search-bar input{
@@ -183,7 +195,7 @@ h1{
    height: 40px;
    border-radius: 10px;
    border: none;
-   background: var(--decoration); 
+   background: var(--decoration);
    color: var(--background);
    cursor: pointer;
 }
@@ -199,8 +211,8 @@ h1{
     display: flex;
     padding: 20px 40px;
     gap: 20px;
-    
-    
+
+
 }
 
 .filter-categories{
@@ -213,8 +225,8 @@ h1{
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    
-    
+
+
 }
 
 .category{
@@ -226,13 +238,13 @@ h1{
     display: flex;
     padding: 0 50px;
     cursor: pointer;
-    
+
 }
 
 .filter-categories button:hover{
     background: var(--decoration);
     color: white;
-    
+
 }
 
 .category-active{
@@ -249,7 +261,6 @@ h1{
     justify-content: center;
 
 }
-
 
 
 
@@ -323,6 +334,12 @@ h1{
     transition: 0.5s ease-in;
 }
 
+.add:active{
+    background: var(--background);
+    color: var(--decoration);
+    transition: 0.2s;
+}
+
 .show-more{
     background: white;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
@@ -362,12 +379,14 @@ footer{
 
 footer div{
     display: flex;
-    gap: 40px; 
+    gap: 40px;
 }
 
 footer div>a{
     color: var(--secondary);
     font-weight: bold;
 }
+
+
 
 

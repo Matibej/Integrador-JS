@@ -6,6 +6,8 @@
         gap: 40px
     }
 
+    
+
     .nav-list{
         position: absolute;
         top: 70px;
@@ -24,6 +26,7 @@
     .menu-label{
         display: flex;
         align-items: center;
+        
     }
 
     .products-and-filter{
@@ -51,6 +54,8 @@
 }
 
 @media (max-width: 550px){
+
+
     #hero h1{
         font-size: 28px;
     }
@@ -76,5 +81,44 @@
     footer div{
         gap: 10px;
     }
+
+}
+
+/* animation */
+
+@media (min-width: 320px) { 
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes slide-left{
+    from{
+        transform: translateX(-100px);
+    }
+    to{
+        transform: translateX(0)
+    }
+}
+
+
+
+
+h1{
+    animation: fade 1s ease-in, slide-left 1.5s ease-in-out;
+}
+
+#hero h3{
+    animation: fade 1s ease-in, slide-left 1.5s ease-in-out;
+}
+
+
 
 }

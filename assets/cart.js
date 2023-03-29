@@ -64,6 +64,7 @@ const DeleteCartItems = (e) => {
     saveLocalStorage(cart)
     RenderCartItems(cart)
     RenderTotalProducts(cart)
+    CheckDeleteAllBtn(cart)
 }
 
 const QuanitityHandler = (e) => {
@@ -127,10 +128,31 @@ const DeleteAllProducts = (e) => {
     if (!e.target.classList.contains("delete-all")) {
         return
     }
-    localStorage.clear("cart")
-    CartContainer.innerHTML = ''
-    ProductsToBuy.innerHTML = ''
-    Total.innerHTML = `$0`
+    ConfirmToDelete()
+    
+}
+
+
+const ConfirmToDelete = () =>{
+    if (window.confirm("¿Desea borrar todos los productos?")) {
+        localStorage.clear("cart")
+        DeleteAll.classList.add("hide")
+        CartContainer.innerHTML = ''
+        ProductsToBuy.innerHTML = ''
+        Total.innerHTML = `$0`
+        
+    }else{
+        return
+    }
+}
+
+const CheckDeleteAllBtn = (cart) => {
+    if (!cart.length) {
+        return DeleteAll.classList.add("hide")
+    }
+    if (cart.length &&  DeleteAll.classList.contains("hide") ) {
+        return DeleteAll.classList.remove("hide")
+    }
 }
 
 const init = () => { 
@@ -142,6 +164,7 @@ CartContainer.addEventListener("click", (e) => {
 });
 RenderTotalProducts(cart);
 DeleteAll.addEventListener("click", DeleteAllProducts)
+CheckDeleteAllBtn(cart)
 
 } 
 
