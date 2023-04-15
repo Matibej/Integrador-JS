@@ -361,6 +361,80 @@ h1{
     display: none;
 }
 
+/* contact */
+
+#contact {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-links, .user-commentary{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+}
+
+.contact-links ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-links li, .contact-links a{
+    color: var(--text);
+    transition: 0.5s;
+}
+
+.contact-links span{
+    color: var(--decoration);
+    font-weight: 600;
+}
+
+.contact-links a:hover{
+    color: var(--decoration);
+    transition: 0.5s;
+}
+
+.user-commentary form {
+   
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-commentary input{
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--text);
+    border-radius: 5px;
+    padding: 2px 10px;
+}
+
+.user-commentary input[type=submit] {
+    align-self: flex-end;
+    max-width: 100px;
+    color: var(--background);
+    background-color: var(--text);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.user-commentary input[type=submit]:hover {
+    color: var(--decoration);
+    transition: 0.5s;
+}
+
+.user-commentary textarea{
+    outline: none;
+    padding: 2px 10px;
+    border: 1px solid var(--text);
+    border-radius: 5px;
+}
+
 /* footer */
 
 footer{
@@ -385,6 +459,12 @@ footer div{
 footer div>a{
     color: var(--secondary);
     font-weight: bold;
+    transition: 0.5s;
+}
+
+footer a:hover {
+    color: var(--decoration);
+    transition: 0.5s;
 }
 
 
